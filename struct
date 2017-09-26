@@ -1,0 +1,67 @@
+// fucpro.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#include <string>
+#define MAX 10
+
+using namespace std;
+
+struct tEmpleado{
+int nroemp;
+string nombre;
+string apellido;
+string direccion;
+int telef;
+int cel;
+float salariobruto;
+};
+
+void main()
+{int cont= 1, N;
+float S, IVA=0.13, AFP=0.1271;
+tEmpleado empleado[MAX];
+do{cout<<" Ingrese el numero de empleados: "<<endl;
+   cin>> N;
+  }while(N<0 || N>MAX);
+for(int i=0; i<N; i++)
+   {empleado[i].nroemp=cont;
+    cin.ignore();
+	cout<<"Ingrese el nombre del empleado "<<i+1<<":";
+    getline(cin,empleado[i].nombre);
+	cout<<"Ingrese el apellido del empleado "<<i+1<<":";
+    getline(cin,empleado[i].apellido);
+	cout<<"Ingrese la direccion del empleado "<<i+1<<":";
+	getline(cin,empleado[i].direccion);
+	cout<<"Ingrese el telefono del empleado "<<i+1<<":";
+	cin>>empleado[i].telef;
+	cout<<"Ingrese el celular del empleado "<<i+1<<":";
+	cin>>empleado[i].cel;
+	cout<<"Ingrese el salario bruto del empleado "<<i+1<<":";
+	cin>>empleado[i].salariobruto;
+   }
+for(int i=0;i<N; i++)
+   {cout<<" Numero de empleado: "<<i+1<<endl;
+    cout<<" Nombre del empleado: "<<empleado[i].nombre<<endl;
+    getch();
+    cout<<" Apellido del empleado: "<<empleado[i].apellido<<endl;
+    getch();
+    cout<<" Direccion del empleado: "<<empleado[i].direccion<<endl;
+    getch();
+	cout<<" Telefono del empleado: "<<empleado[i].telef<<endl;
+	getch(); 
+	cout<<" Celular del empleado: "<<empleado[i].cel<<endl;
+    getch();
+	S=empleado[i].salariobruto;
+	S = S - (S*IVA);
+	S = S - (S*AFP);
+	empleado[i].salariobruto = S;
+	cout<<" Salario bruto del empleado: "<<empleado[i].salariobruto<<endl; 
+	getch();
+}
+
+}
+
