@@ -1,0 +1,57 @@
+// proyecto.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#include <string>
+#define MAX 10
+
+using namespace std;
+
+struct tbuscar{
+int N;
+int CI;
+string name;
+string direccion;
+float precio;
+float ganancia;
+};
+
+void fisica();
+
+
+void main()
+{int N, CI;
+float precio=0, ganancia;
+cout<<"                     BIENVENIDO A SU MENU "<<endl;
+cout<<"";
+cout<<" OPCION 1: FISICA  "<<endl;
+getch();
+tbuscar R[MAX];
+do{cout<<"Ingrese la opcion con la que desee solicitar el servicio: "<<endl;
+cin>>N;
+}while(N!=1);
+cout<<"Ingresó a la seccion fisica "<<endl;
+getch();
+cout<<" Los docentes disponibles son los siguientes: "<<endl;
+fisica ();
+cout<< "Ingrese la opcion con la que desea pasar clases: ";
+cin>> N;
+cout<<" Ingrese el numero de horas que desea pasar: "<<endl;
+cin>>precio;
+precio = precio*130;
+cout<<" Usted debe pagar al profesor LUIS MARTINEZ el monto de "<<precio<<"Bs. al finalizar su clase. "<<endl;
+ganancia = precio*0.1;
+cout<<"La ganancia de la empresa es de: "<< ganancia<<"Bs. "<<endl;
+getch();
+cout<<" Gracias por contratar nuestro servicio "<<endl;
+getch();
+}
+
+void fisica()
+{cout<<" NOMBRE: LUIS MARTINEZ. "<<endl;
+cout<<" CEDULA IDENTIDAD: 123456. "<<endl;
+cout<<" PRECIO(HORA): 130Bs. "<<endl;
+}
